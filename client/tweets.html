@@ -1,8 +1,20 @@
 <body>
+<div class="container">
     {{> tweets}}
+</div>
 </body>
 
 <template name="tweets">
+	<hr />
+
+<div class="btn-group">
+{{#each tracks}}
+  <button type="button" id="{{id}}" class="btn btn-primary track {{selected_class}}">{{display_name}}</button>
+{{/each}}
+</div>
+
+	<hr />
+
 
 {{#each tweets}}
     <div class="well">
@@ -13,5 +25,11 @@
 </template>
 
 <template name="tweet">
-{{text}}
+
+<h4>{{text}} <br/></h4>
+<strong>Tweeted at :</strong> {{createdtime}} <br/>
+<strong>Name :</strong> {{name}} <br/>
+<strong>Timezone :</strong> {{timezone}} <br/>
+<strong>Locality :</strong> {{locality}} <br/>
+<strong>Geo :</strong> {{geo}} <br/>
 </template>
