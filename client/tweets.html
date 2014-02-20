@@ -1,0 +1,17 @@
+<body>
+    {{> tweets}}
+</body>
+
+<template name="tweets">
+
+{{#each tweets}}
+    <div class="well">
+     {{> tweet}}
+     </div>
+
+{{/each}}
+</template>
+
+<template name="tweet">
+{{text}}
+</template>
